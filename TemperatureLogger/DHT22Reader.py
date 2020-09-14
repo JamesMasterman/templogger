@@ -7,7 +7,8 @@ DHT_PIN = 27
 
 def readAirTemperatureHumidity():
 	humidity, temperature = Adafruit_DHT.read_retry(DHT_SENSOR, DHT_PIN)
-	humidity = humidity - 4
+	if humidity is not None:
+		humidity = humidity - 4
 	return humidity, temperature
 
 

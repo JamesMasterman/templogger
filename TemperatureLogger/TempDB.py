@@ -34,7 +34,7 @@ def insertPh(nowStr, pH):
 	conn.isolation_level = None
 	try:
 		cursor = conn.cursor()
-		sql = "INSERT INTO ph(when_recorded, pH) VALUES(?,?)"
+		sql = "INSERT INTO tank_ph(when_recorded, ph) VALUES(?,?)"
 		values = (nowStr, pH)
 		cursor.execute(sql, values)
 		conn.close()
